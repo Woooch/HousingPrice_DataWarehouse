@@ -43,7 +43,7 @@ sale_datetime | source_url | book | page | property_township | sale_id | deed_da
 building_num_baths | building_area_sqft | building_assessed_value | land_area_acres | land_area_sqft | land_assessed_value | total_assessed_value | total_appraised_value | building_appraised_value |
 
 # Screenshot of DBSchema layout
-![Dimensional Schema](https://github.com/user-attachments/assets/c55f7f4e-2e73-46a6-a012-f79298fb500f)
+![Dimensional Schema](https://github.com/Woooch/HousingPrice_DataWarehouse/blob/main/Screenshots/1.png)
 
 # Screenshot of Information Architecture
 ![image](https://github.com/user-attachments/assets/3dca83ca-ef7a-4c6f-841b-369f1df58ea5)
