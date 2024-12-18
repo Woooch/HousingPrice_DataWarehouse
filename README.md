@@ -46,10 +46,10 @@ building_num_baths | building_area_sqft | building_assessed_value | land_area_ac
 ![Dimensional Schema](https://github.com/Woooch/HousingPrice_DataWarehouse/blob/main/Screenshots/1.png)
 
 # Screenshot of Information Architecture
-![image](https://github.com/user-attachments/assets/3dca83ca-ef7a-4c6f-841b-369f1df58ea5)
+![image](https://github.com/Woooch/HousingPrice_DataWarehouse/blob/main/Screenshots/2.png)
 
 # Screenshot of Data Architecture
-![image](https://github.com/user-attachments/assets/6d5476a6-1d53-4352-93a8-7c7321b25cbf)
+![image](https://github.com/Woooch/HousingPrice_DataWarehouse/blob/main/Screenshots/3.png)
 
 --- 
 # 2. Business Impact
@@ -108,11 +108,11 @@ We employed Snowflake to import the extracted data from Azure Blob Storage into 
 
 # 7. Interface
 ## Visualizations
-![image](https://github.com/user-attachments/assets/72ac81dd-44f4-4a5a-be52-bb55b90ac568)
+![image](https://github.com/Woooch/HousingPrice_DataWarehouse/blob/main/Screenshots/4.png)
 This graph shows the salary distribution of the professions from our given dataset. We see that jobs that are more technical or jobs that require much training or education are paid higher.
-![image](https://github.com/user-attachments/assets/29873862-18a5-4dbb-a44c-1e1d2e0cea90)
+![image](https://github.com/Woooch/HousingPrice_DataWarehouse/blob/main/Screenshots/5.png)
 This dashboard shows the average salary for a profession versus the average housing sale price per county. What can we learn from this? First: we see that counties within New York City (Kings in this case) are extremely expensive, relative to the average salary for the occupation. Second: As the orange bar becomes larger, it begs the question of whether or not purchasing said property is reasonable as you will be expected to pay it off for several decades.
-![image](https://github.com/user-attachments/assets/6125b22b-2ccf-46ee-82a3-c6cda276e0e1)
+![image](https://github.com/Woooch/HousingPrice_DataWarehouse/blob/main/Screenshots/6.png)
 This graph shows a scatterplot between the average sale price for houses versus its average assessed value. From this, we can see there are more expensive counties that are out there that you can live in, an example of this is Westchester County, per our data, the people there are wealthy. Houses in Westchester are selling at over 200% of the assessed value, which explains that there is housing inflation in that area. 
 
 ## Conclusion
