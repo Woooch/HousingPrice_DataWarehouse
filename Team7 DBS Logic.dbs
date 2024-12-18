@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="CIS4400 Team7 Schema" database="LogicalDesign" id="LogicalDesign-2348" >
+	<schema name="INSTANCE" catalogname="CIS4400 Team7 Schema" >
+		<table name="dim_property" prior="dim_" >
+			<column name="dim_property_id" prior="property_id" type="VARCHAR" length="255" jt="12" mandatory="y" />
+			<column name="property_type" type="VARCHAR" length="255" jt="12" />
+			<column name="land_type" type="VARCHAR" length="255" jt="12" />
+			<column name="state" type="CHAR" length="2" jt="1" />
+			<column name="property_city" type="CHAR" length="100" jt="1" />
+			<column name="property_county" type="VARCHAR" length="100" jt="12" />
+			<column name="property_township" type="VARCHAR" length="100" jt="12" />
+			<column name="property_street_address" type="VARCHAR" length="255" jt="12" />
+			<column name="property_zip5" type="VARCHAR" length="5" jt="12" />
+			<column name="source_url" type="VARCHAR" length="500" jt="12" />
+			<index name="pk_dim_property" unique="PRIMARY_KEY" >
+				<column name="dim_property_id" />
+			</index>
+		</table>
+		<table name="dim_sale" prior="Entity" >
+			<column name="dim_sale_id" prior="sale_id" type="VARCHAR" length="255" jt="12" mandatory="y" />
+			<column name="sale_datetime" type="DATETIME" length="12" jt="93" />
+			<column name="book" type="INT" jt="4" />
+			<column name="page" type="INT" jt="4" />
+			<index name="pk_dim_sale" unique="PRIMARY_KEY" >
+				<column name="dim_sale_id" />
+			</index>
+		</table>
+		<table name="dim_states" prior="Entity" >
+			<column name="dim_code" prior="code" type="CHAR" length="2" jt="1" mandatory="y" />
+			<column name="name" type="CHAR" length="100" jt="1" />
+			<index name="pk_dim_states" unique="PRIMARY_KEY" >
+				<column name="dim_code" />
+			</index>
+		</table>
+		<table name="facts_property_values" prior="facts_property_detail" >
+			<column name="sale_price" type="DECIMAL" length="12" decimal="2" jt="3" />
+			<column name="total_appraised_value" type="DECIMAL" length="12" decimal="2" jt="3" />
+			<column name="total_assessed_value" type="DECIMAL" length="12" decimal="2" jt="3" />
+			<column name="building_appraised_value" type="DECIMAL" length="12" decimal="2" jt="3" />
+			<column name="building_assessed_value" type="DECIMAL" length="12" decimal="2" jt="3" />
+			<column name="building_num_units" type="NUMERIC" length="3" decimal="1" jt="2" />
+			<column name="building_num_stories" type="NUMERIC" length="2" jt="2" />
+			<column name="building_num_beds" type="NUMERIC" length="2" jt="2" />
+			<column name="building_num_baths" type="NUMERIC" length="2" jt="2" />
+			<column name="building_area_sqft" type="DOUBLE" jt="8" />
+			<column name="land_assessed_value" type="DECIMAL" length="12" decimal="2" jt="3" />
+			<column name="land_area_acres" type="DOUBLE" jt="8" />
+			<column name="land_area_sqft" type="DOUBLE" jt="8" />
+			<column name="property_lat" type="DOUBLE" jt="8" />
+			<column name="property_lon" type="DOUBLE" jt="8" />
+			<column name="code" prior="fk_code" type="CHAR" length="2" jt="1" mandatory="y" />
+			<column name="sale_id" type="VARCHAR" length="255" jt="12" mandatory="y" />
+			<column name="property_id" type="VARCHAR" length="255" jt="12" mandatory="y" />
+			<fk name="fk_facts_property_values_dim_states" to_schema="CIS4400 Team7 Schema.INSTANCE" to_table="dim_states" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="code" pk="dim_code" />
+			</fk>
+			<fk name="fk_facts_property_values_dim_sale" to_schema="CIS4400 Team7 Schema.INSTANCE" to_table="dim_sale" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="sale_id" pk="dim_sale_id" />
+			</fk>
+			<fk name="fk_facts_property_values_dim_property" to_schema="CIS4400 Team7 Schema.INSTANCE" to_table="dim_property" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="property_id" pk="dim_property_id" />
+			</fk>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout-25df" show_relation="columns" >
+		<entity schema="CIS4400 Team7 Schema.INSTANCE" name="dim_property" color="C1D8EE" x="48" y="352" />
+		<entity schema="CIS4400 Team7 Schema.INSTANCE" name="dim_sale" color="C1D8EE" x="48" y="160" />
+		<entity schema="CIS4400 Team7 Schema.INSTANCE" name="dim_states" color="C1D8EE" x="576" y="304" />
+		<entity schema="CIS4400 Team7 Schema.INSTANCE" name="facts_property_values" color="C1D8EE" x="336" y="48" />
+	</layout>
+</project>
