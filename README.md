@@ -126,7 +126,7 @@ This graph shows a scatterplot between the average sale price for houses versus 
 
 
 # 8. Documentation
-[Work process documentation with screenshots](https://github.com/YChen099/CIS-4400-Group-7-Project/blob/main/Process_Documentation.md)
+[Work process documentation with screenshots](https://github.com/Woooch/HousingPrice_DataWarehouse/blob/main/Process_Documentation.md)
 
 [Powerpoint Presentation Reference in PDF](https://github.com/YChen099/CIS-4400-Group-7-Project/blob/main/CIS4400%20Group%2007%20Presentation.pdf)
 
